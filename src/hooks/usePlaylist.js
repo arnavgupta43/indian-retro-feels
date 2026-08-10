@@ -3,11 +3,12 @@ import { searchSong } from '../services/saavn';
 
 const AUTO_SKIP_DELAY_MS = 2500;
 
-// Fetches the current song in a playlist, exposes next/prev to move through
-// it (wrapping around after the last song), and auto-skips a song that fails
-// to resolve. If every song in the list fails in a row (systemic API outage
-// rather than one bad track), `allFailed` flips true so the caller can switch
-// to a fallback playback source.
+// Fetches the current song in a playlist, starting from a random track each
+// time the playlist changes, then exposes next/prev to move through it in
+// order (wrapping around after the last song back to the first). Auto-skips
+// a song that fails to resolve. If every song in the list fails in a row
+// (systemic API outage rather than one bad track), `allFailed` flips true so
+// the caller can switch to a fallback playback source.
 export function usePlaylist(songs) {
   const [index, setIndex] = useState(0);
   const [track, setTrack] = useState(null);
@@ -16,7 +17,7 @@ export function usePlaylist(songs) {
   const failureStreak = useRef(0);
 
   useEffect(() => {
-    setIndex(0);
+    setIndex(Math.floor(Math.random() * songs.length));
     failureStreak.current = 0;
     setAllFailed(false);
   }, [songs]);
