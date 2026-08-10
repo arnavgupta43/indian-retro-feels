@@ -50,3 +50,28 @@
   background: var(--ink);
   color: var(--bg);
 }
+
+@media (max-width: 768px) {
+  .intro {
+    padding: 0 28px;
+    gap: 20px;
+  }
+
+  .intro__devanagari {
+    font-size: 16px;
+  }
+
+  .intro__title {
+    font-size: 34px;
+  }
+
+  .intro__subtitle {
+    font-size: 12px;
+    max-width: 320px;
+    line-height: 1.6;
+  }
+
+  .intro__begin {
+    padding: 12px 32px;
+  }
+}

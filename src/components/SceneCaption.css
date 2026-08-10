@@ -42,3 +42,33 @@
   color: var(--divider);
   text-shadow: var(--text-outline);
 }
+
+@media (max-width: 768px) {
+  .scene-caption {
+    top: 84px;
+    left: 20px;
+    right: 20px;
+    gap: 8px;
+  }
+
+  .scene-caption__hi {
+    font-size: 13px;
+  }
+
+  .scene-caption__en {
+    font-size: 28px;
+  }
+
+  .scene-caption__ambient {
+    font-size: 11px;
+    max-width: none;
+  }
+
+  .scene-index {
+    top: auto;
+    bottom: 116px;
+    left: 20px;
+    right: 20px;
+    font-size: 10px;
+  }
+}

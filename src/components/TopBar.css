@@ -88,3 +88,38 @@
   color: var(--muted);
   margin-left: auto;
 }
+
+@media (max-width: 768px) {
+  .topbar {
+    height: 64px;
+    padding: 0 16px;
+  }
+
+  .topbar__brand {
+    font-size: 15px;
+  }
+
+  .topbar__switcher-btn {
+    padding: 8px 12px;
+    gap: 8px;
+    font-size: 10px;
+  }
+
+  .topbar__dropdown {
+    min-width: 0;
+    width: min(280px, calc(100vw - 32px));
+  }
+
+  .topbar__dropdown-item {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .topbar__dropdown-en {
+    font-size: 13px;
+  }
+
+  .topbar__dropdown-hi {
+    font-size: 11px;
+  }
+}

@@ -30,3 +30,11 @@ body {
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
   overflow: hidden;
 }
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    height: 100dvh;
+  }
+}
